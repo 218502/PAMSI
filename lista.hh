@@ -11,8 +11,20 @@ public:
 class List : public InterfaceList
 {
 public:
- int add(int element, int position);
- void remove(int position);
- int get(int position);
- int size();
+  int add(int element, int position)
+    {
+      ;
+    }
+  void remove(int position)
+    {
+      ;
+    }
+  int get(int position)
+    {
+      ;
+    }
+  int size()
+    {
+      ;
+    }
 };
