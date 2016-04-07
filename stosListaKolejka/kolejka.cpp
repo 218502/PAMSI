@@ -1,4 +1,5 @@
 #include "kolejka.hh"
+
 void Queue::push(int element)
 {
   ;
@@ -11,4 +12,3 @@ int Queue::size()
 {
   ;
 }
-
