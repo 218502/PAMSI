@@ -8,8 +8,8 @@ void Stos::push(int element)
 }
 int Stos::pop()
 {
-  pomocnicza=list.get();
-  list.remove();
+  pomocnicza=list.get(1);
+  list.remove(1);
   return pomocnicza;
 }
 int Stos::size()

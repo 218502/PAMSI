@@ -5,10 +5,9 @@
 using namespace std;
 int main()
 {
-  Stos stos;
-  stos.push(5);
-  cout<<stos.pop()<<endl;
-  stos.push(6);
-  stos.push(7);
-  cout<<stos.pop()<<endl;
+  Queue kolejka;
+  kolejka.push(500);
+  kolejka.push(600);
+  cout<<kolejka.pop()<<endl;
+  cout<<kolejka.pop()<<endl;
 }

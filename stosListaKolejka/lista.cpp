@@ -6,36 +6,53 @@ List::List()
 {
   //poczatek=0;
   //koniec=0;
-  //rozmiar=0;
+  rozmiar=0;
 }
 int List::add(int element)
+{
+  pomocnicza=new node;
+  pomocnicza->element=element;
+  if(rozmiar==0)
     {
-      pomocnicza=new node;
-      pomocnicza->element=element;
-      if(rozmiar==0)
+      poczatek=pomocnicza;
+    }else
+    {
+      pomocnicza->nastepny=poczatek;
+      poczatek=pomocnicza;
+    }
+	rozmiar++;
+}
+void List::remove(int position)
+{
+  if(position<=rozmiar)
+    {
+      if(position==1)
 	{
-	  poczatek=pomocnicza;
+	  delete(poczatek);
 	}else
 	{
-	  pomocnicza->nastepny=poczatek;
-	  poczatek=pomocnicza;
+	  for(int i=1;i<position;i++)
+	    {
+	      pomocnicza=pomocnicza2;
+	      pomocnicza2=pomocnicza2->nastepny;
+	    }
+	  pomocnicza->nastepny=pomocnicza2;
+	  delete(pomocnicza2);
 	}
-      rozmiar++;
     }
-void List::remove()
-{
-  if(rozmiar>0)
-    {
-      pomocnicza=poczatek;
-      poczatek=poczatek->nastepny;
-      delete(pomocnicza);
-      rozmiar--;
-    }
+  rozmiar--;
 }
-int List::get()
+int List::get(int position)
 {
-  if(rozmiar>0)
-    return poczatek->element;
+  if(position<=rozmiar)
+    {
+      pomocnicza2=poczatek;
+      for(int i=1;i<position;i++)
+	{
+	  pomocnicza2=pomocnicza2->nastepny;
+	}
+      return pomocnicza2->element;
+    }
 }
 int List::size()
     {

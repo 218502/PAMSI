@@ -1,5 +1,6 @@
 #ifndef kolejka_hh
 #define kolejka_hh
+#include "lista.hh"
 class InterfaceQueue
 {
 int Size;
@@ -11,7 +12,9 @@ virtual int size()=0;
 
 class Queue : public InterfaceQueue
 {
-int Size;
+  int Size;
+  List lista;
+  int pomocnicza;
 public:
 void push(int element);
 int pop();
