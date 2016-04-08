@@ -5,9 +5,11 @@
 using namespace std;
 int main()
 {
-  Queue kolejka;
-  kolejka.push(500);
-  kolejka.push(600);
-  cout<<kolejka.pop()<<endl;
-  cout<<kolejka.pop()<<endl;
+  List lista;
+  lista.add(10,1);
+  lista.add(15,1);
+  lista.add(20,1);
+  lista.add(25,1);
+  cout<<lista.get(4)<<endl;
+  cout<<"rozmiar= "<<lista.size()<<endl;
 }

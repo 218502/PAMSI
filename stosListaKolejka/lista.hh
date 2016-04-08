@@ -4,23 +4,22 @@
 class InterfaceList
 {
 public:
-  virtual int add(int element)=0;
- virtual void remove(int position)=0;
- virtual int get(int position)=0;
- virtual int size()=0;
+  virtual int add(int element, int position)=0;
+  virtual void remove(int position)=0;
+  virtual int get(int position)=0;
+  virtual int size()=0;
 };
 
 
 class List : public InterfaceList
 {
-  int rozmiar;
-  node* poczatek;
-  node* pomocnicza;
-  node* pomocnicza2;
-  int* koniec;
+  int Size;
+  node* head;
+  node* temp;
+  node* temp2;
 public:
   List();
-  int add(int element);
+  int add(int element, int position);
   void remove(int position);
   int get(int position);
   int size();

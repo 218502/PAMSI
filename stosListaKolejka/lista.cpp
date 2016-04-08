@@ -4,57 +4,64 @@
 using namespace std;
 List::List()
 {
-  //poczatek=0;
+  //poczatek->nastepny=0;
   //koniec=0;
-  rozmiar=0;
+  Size=0;
 }
-int List::add(int element)
+int List::add(int element, int position)
 {
-  pomocnicza=new node;
-  pomocnicza->element=element;
-  if(rozmiar==0)
+  if(size()==0)
     {
-      poczatek=pomocnicza;
+      temp=new node;
+      temp->element=element;
+      temp->nastepny=0;
+      head=temp;
     }else
     {
-      pomocnicza->nastepny=poczatek;
-      poczatek=pomocnicza;
+      if(position<Size+2)
+	{
+	  if(position==1)
+	    {
+	      temp=new node;
+	      temp->element=element;
+	      temp->nastepny=head;
+	      head=temp;
+	    }else
+	    {
+	      ;
+	    }
+	}
     }
-	rozmiar++;
+  Size++;
 }
 void List::remove(int position)
 {
-  if(position<=rozmiar)
+  if(position==1)
     {
-      if(position==1)
-	{
-	  delete(poczatek);
-	}else
-	{
-	  for(int i=1;i<position;i++)
-	    {
-	      pomocnicza=pomocnicza2;
-	      pomocnicza2=pomocnicza2->nastepny;
-	    }
-	  pomocnicza->nastepny=pomocnicza2;
-	  delete(pomocnicza2);
-	}
+      temp=head;
+      head=head->nastepny;
+    }else
+    {
+      ;
     }
-  rozmiar--;
+  Size--;
 }
 int List::get(int position)
 {
-  if(position<=rozmiar)
+  if(position==1)
     {
-      pomocnicza2=poczatek;
+      return head->element;
+    }else
+    {
+      temp=head;
       for(int i=1;i<position;i++)
 	{
-	  pomocnicza2=pomocnicza2->nastepny;
+	  temp=temp->nastepny;
 	}
-      return pomocnicza2->element;
+      return temp->element;
     }
 }
 int List::size()
     {
-      return rozmiar;
+      return Size;
     }
