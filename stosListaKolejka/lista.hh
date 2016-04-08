@@ -1,22 +1,27 @@
 #ifndef lista_hh
 #define lista_hh
+#include "node.hh"
 class InterfaceList
 {
 public:
- virtual int add(int element, int position)=0;
- virtual void remove(int position)=0;
- virtual int get(int position)=0;
+ virtual int add(int element)=0;
+ virtual void remove()=0;
+ virtual int get()=0;
  virtual int size()=0;
 };
 
 
 class List : public InterfaceList
 {
-  int* tablica;
+  int rozmiar;
+  node* poczatek;
+  node* pomocnicza;
+  int* koniec;
 public:
-  int add(int element, int position);
-  void remove(int position);
-  int get(int position);
+  List();
+  int add(int element);
+  void remove();
+  int get();
   int size();
 };
 #endif

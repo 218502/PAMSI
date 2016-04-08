@@ -4,12 +4,12 @@
 
 void Stos::push(int element)
 {
-  list.add(element,Size);
+  list.add(element);
 }
 int Stos::pop()
 {
-  pomocnicza=list.get(Size);
-  list.remove(Size);
+  pomocnicza=list.get();
+  list.remove();
   return pomocnicza;
 }
 int Stos::size()
