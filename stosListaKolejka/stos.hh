@@ -14,7 +14,7 @@ class Stos : public InterfaceStos
 {
   int Size;
   List list;
-  int pomocnicza;//zmienna do przechowywania zdejmowanego elementu
+  int temp;//zmienna do przechowywania zdejmowanego elementu
 public:
   void push(int element);
   int pop();

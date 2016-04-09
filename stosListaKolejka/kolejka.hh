@@ -14,7 +14,7 @@ class Queue : public InterfaceQueue
 {
   int Size;
   List lista;
-  int pomocnicza;
+  int temp;
 public:
 void push(int element);
 int pop();

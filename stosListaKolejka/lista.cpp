@@ -10,25 +10,34 @@ List::List()
 }
 int List::add(int element, int position)
 {
-  if(size()==0)
+  if(size()==0) //dodawanie do pustej listy
     {
       temp=new node;
       temp->element=element;
       temp->nastepny=0;
       head=temp;
-    }else
+    }else // dodawanie do niepustej listy
     {
-      if(position<Size+2)
+      if(position<Size+2)//dodawanie tylko jesli pozycja jest na liscie lub jedno miejsce za lista
 	{
-	  if(position==1)
+	  if(position==1)//dodawanie na pierwsze miejsce
 	    {
 	      temp=new node;
 	      temp->element=element;
 	      temp->nastepny=head;
 	      head=temp;
-	    }else
+	    }else//dodawanie na miejsce rozne od pierwszego
 	    {
-	      ;
+	      temp=head;
+	      for(int i=1;i<position;i++)
+		{
+		  temp2=temp;
+		  temp=temp->nastepny;
+		}
+	      temp=new node;
+	      temp->nastepny=temp2->nastepny;
+	      temp2->nastepny=temp;
+	      temp->element=element;
 	    }
 	}
     }
@@ -40,9 +49,19 @@ void List::remove(int position)
     {
       temp=head;
       head=head->nastepny;
+      delete temp;
+      temp=0;
     }else
     {
-      ;
+      temp=head;
+      for(int i=1;i<position;i++)
+	{
+	  temp2=temp;
+	  temp=temp->nastepny;
+	}
+      temp2->nastepny=temp->nastepny;
+      delete temp;
+      temp=0;
     }
   Size--;
 }
