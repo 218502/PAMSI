@@ -3,13 +3,13 @@
 
 void Queue::push(int element)
 {
-  lista.add(element,lista.size());
+  lista.add(element,lista.size()+1);
   Size=lista.size();
 }
 int Queue::pop()
 {
-  temp=lista.get(lista.size());
-  lista.remove(lista.size());
+  temp=lista.get(1);
+  lista.remove(1);
   Size=lista.size();
   return temp;
 }
