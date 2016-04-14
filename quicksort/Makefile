@@ -6,7 +6,7 @@ __start__: adt_lsq
 adt_lsq: obj/main.o obj/stack.o obj/queue.o obj/list.o obj/stoper.o
 	g++ -Wall -pedantic -o adt_lsq obj/main.o obj/queue.o obj/stack.o obj/list.o obj/stoper.o
 
-obj/main.o: src/main.cpp inc/stack.hh inc/list.hh inc/queue.hh inc/node.hh
+obj/main.o: src/main.cpp inc/stack.hh inc/list.hh inc/queue.hh inc/node.hh inc/sort.hh
 	g++ ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/stack.o: src/stack.cpp inc/stack.hh
