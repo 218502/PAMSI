@@ -1,0 +1,12 @@
+#ifndef node_hh
+#define node_hh
+#include <string>
+class node
+{
+  int value;
+  std::string key;
+  node* nastepny;
+  friend class List;
+};
+
+#endif
