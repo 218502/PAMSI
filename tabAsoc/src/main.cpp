@@ -3,6 +3,8 @@
 #include "lista.hh"
 #include "hashentry.hh"
 #include "asoctab.hh"
+#include <string>
+#include "stoper.hh"
 using namespace std;
 
 
@@ -18,7 +20,25 @@ int main()
   cout<<"wartosc: "<<tablica.getItem("hejko")<<endl;
   */
   asocTab tab;
-  hehe.tab.putItem("hej",105);
-  cout<<hehe["hej"]<<endl;
+  int S;
+  int tempval;
+  string tempstr;
+  Stoper stoper;
+
+  S=100000000;
+  stoper.start();
+  for(int i=0;i<S;i++)
+    {
+    cin>>tempstr;
+    cin>>tempval;
+  tab.putItem(tempstr,tempval);
+    }
+  stoper.stop();
+  stoper.pokazCzas();
+
+  stoper.start();
+  cout<<"wartosc: "<<tab["faxon"]<<endl;
+  stoper.stop();
+  stoper.pokazCzas();
   
 }

@@ -2,8 +2,15 @@
 #define ASOCTAB_HH
 #include "hashtab.hh"
 #include <string>
+class iasocTab
+{
+public:
+  virtual void putItem(std::string,int)=0;
+};
 
-class asocTab
+
+
+class asocTab : public iasocTab
 {
 public:
   hashtab tablica;
@@ -12,7 +19,10 @@ public:
 {
   return tablica.getItem(key);
 }
-
+  virtual void putItem(std::string key, int value)
+  {
+    tablica.putItem(key,value);
+  }
 };
 
 #endif
