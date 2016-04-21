@@ -1,27 +1,21 @@
 #ifndef HASHTAB_HH
 #define HASHTAB_HH
-#include "hashentry.hh"
 #include "lista.hh"
 class hashtab
 {
 
-  List *tab;
+  List tab[10];
   int Size;
 public:
-  hashtab(int size)
+  /* hashtab(int size)
   {
     tab=new List[size];
     Size=size;
   }
-
-  int putItem(std::string key, int value)
-  {
-    ;
-  }
-  int getItem(std::string key)
-  {
-    ;
-  }
+  */
+  hashtab(){Size=10;}
+  void putItem(std::string key, int value);
+  int getItem(std::string key);
 };
 
 #endif

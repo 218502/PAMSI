@@ -3,8 +3,8 @@ CPPFLAGS= -c -g -Iinc
 __start__: prog
 	./prog
 
-prog: obj/main.o obj/hashtab.o obj/hashentry.o obj/lista.o
-	g++ -o prog obj/main.o obj/hashtab.o obj/hashentry.o obj/lista.o
+prog: obj/main.o obj/hashtab.o obj/hashentry.o obj/lista.o obj/asoctab.o
+	g++ -o prog obj/main.o obj/hashtab.o obj/hashentry.o obj/lista.o obj/asoctab.o
 
 obj/main.o: src/main.cpp 
 	g++ ${CPPFLAGS} -o obj/main.o src/main.cpp
@@ -17,6 +17,9 @@ obj/hashentry.o: src/hashentry.cpp inc/hashentry.hh
 
 obj/hashtab.o: src/hashtab.cpp inc/hashtab.hh inc/hashentry.hh
 	g++ ${CPPFLAGS} -o obj/hashtab.o src/hashtab.cpp
+
+obj/asoctab.o: src/asoctab.cpp inc/asoctab.hh inc/hashtab.hh inc/hashentry.hh
+	g++ ${CPPFLAGS} -o obj/asoctab.o src/asoctab.cpp
 
 clean:
 	rm -f obj/*.o prog
