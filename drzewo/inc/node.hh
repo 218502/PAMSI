@@ -4,9 +4,9 @@
 #include "element.hh"
 class node
 {
-  element element;
-  node* left;
-  node* right;
+  element el;
+  node *left;
+  node *right;
   friend class tree;
 };
 
