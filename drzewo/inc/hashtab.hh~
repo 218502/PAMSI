@@ -1,0 +1,14 @@
+#ifndef HASHTAB_HH
+#define HASHTAB_HH
+#include "hashentry.hh"
+
+class hashtab
+{
+
+  HashEntry **tab;
+public:
+
+
+};
+
+#endif
