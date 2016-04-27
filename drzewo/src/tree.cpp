@@ -102,9 +102,19 @@ int tree::add(element el)
     root->black=1;
     }
 
-int tree::find(element el)
+node* tree::find(int key)
 {
-  ;
+  node* temp;
+  temp=root;
+  while((temp!=&S) && (temp->el.key!=key))
+    if(key < temp->el.key)
+      temp=temp->left;
+    else
+      temp=temp->right;
+  if(temp==&S)
+    return NULL;
+  return temp;
+
 }
 
 
