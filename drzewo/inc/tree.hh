@@ -5,9 +5,9 @@
 class tree
 {
   node* root;
-  node* S;//straznik drzewa, ktory reprezentuje liscie;
+  node S;//straznik drzewa, ktory reprezentuje liscie;
 public:
-  tree(){root=0;}
+  tree(){S.black=1;S.up=&S;S.left=&S;S.right=&S;root=&S;}
   int add(element el);
   int find(element el);
   void leftRotate(node *A);
