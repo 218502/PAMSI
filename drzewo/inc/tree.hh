@@ -4,12 +4,14 @@
 #include "node.hh"
 class tree
 {
-  int Size;
   node* root;
+  node* S;//straznik drzewa, ktory reprezentuje liscie;
 public:
-  tree(){Size=0;}
+  tree(){root=0;}
   int add(element el);
   int find(element el);
+  void leftRotate(node *A);
+  void rightRotate(node *A);
 };
 
 #endif
