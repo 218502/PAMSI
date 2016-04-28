@@ -8,18 +8,19 @@ using namespace std;
 
 int main()
 {
-  const int sup=10000000;// zlozonosc obliczeniowa
+  const int sup=30000000;// zlozonosc obliczeniowa
   tree *drzewko;
   Stoper s;
   drzewko=new tree;
   element e1;
 
-  s.start();
   for(int i=0;i<sup;i++)
     {
       e1.key=rand();
       drzewko->add(e1);
     }
+  s.start();
+  drzewko->find(e1.key);
   s.stop();
   s.pokazCzas();
 }
