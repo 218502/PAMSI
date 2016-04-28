@@ -52,9 +52,11 @@ int tree::add(element el)
     {
       if(temp1->up==temp1->up->up->left)
 	{
-	  temp2=temp1->up->up->right;//temp2 to wujek temp1
+	  temp2=temp1->up->up->right;
+      //przypadki "normalne", wujek jest prawym synem
 
-	    if(temp2->black==0)//Przypadek1
+	    if(temp2->black==0)//Przypadek1,
+	      // wujek jest czerwony
 	      {
 		temp1->up->black=1;
 		temp2->black=1;
@@ -63,22 +65,26 @@ int tree::add(element el)
 		continue;
 	      }
 
-	  if(temp1==temp1->up->right)//Przypadek2
+	  if(temp1==temp1->up->right)//Przypadek2,
+	    // wujek jest czarny, a wstawiony wezel to prawy syn
 	    {
 	      temp1=temp1->up;
 	      leftRotate(temp1);
 	    }
 
-	  temp1->up->black=1;//Przypadek3
+	  temp1->up->black=1;//Przypadek3,
+	  // wujek jest czarny, a wstawiony wezel to lewy syn
 	  temp1->up->up->black=0;
 	  rightRotate(temp1->up->up);
 	  break;
 	}
       else//Przypadki lustrzane
+	// wujek jest lewym synem
 	{
 	  temp2=temp1->up->up->left;
 
 	  if(temp2->black=0)//Przypadek1
+	    // wujek jest czarny, a wstawiony wezel to prawy syn
 	    {
 	      temp1->up->black=1;
 	      temp2->black=1;
