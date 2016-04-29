@@ -1,0 +1,9 @@
+#ifndef GRAPHSEARCH_HH
+#define GRAPHSEARCH_HH
+
+class graphSearch
+{
+
+};
+
+#endif

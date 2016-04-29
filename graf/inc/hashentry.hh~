@@ -1,0 +1,12 @@
+#ifndef HASHENTRY_HH
+#define HASHENTRY_HH
+
+class HashEntry
+{
+public:
+  int key;
+  int value;
+};
+
+
+#endif

@@ -1,0 +1,11 @@
+#include <iostream>
+#include "graph.hh"
+#include "stoper.hh"
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+  cout<<"works!"<<endl;
+}

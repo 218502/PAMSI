@@ -1,0 +1,12 @@
+#ifndef VERTEX_HH
+#define VERTEX_HH
+
+class vertex
+{
+  int value;
+public:
+  vertex(int x){value=x;}
+};
+
+
+#endif
