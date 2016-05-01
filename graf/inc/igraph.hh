@@ -1,12 +1,13 @@
 #ifndef IGRAPH_HH
 #define IGRAPH_HH
-#include "graphsearch.hh"
+#include "lista.hh"
 
-class igraph : public graphSearch
+class igraph
 {
-  virtual void addVertex(vertex v)=0;
-  virtual void addEdge(vertex x, vertex y, int weight)=0;
-  virtual void getNeighbors(vertex x)=0;
-  virtual void isConnected(vertex x, vertex y)=0;
+public:
+  virtual void addVertex(int v)=0;
+  virtual void addEdge(int x, int y)=0;
+  virtual List getNeighbors(int x)=0;
+  virtual bool isConnected(int x, int y)=0;
 };
 #endif

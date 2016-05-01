@@ -3,23 +3,23 @@ CPPFLAGS= -c -g -Iinc
 __start__: prog
 	./prog
 
-prog: obj/main.o obj/main.o obj/graph.o obj/edge.o obj/vertex.o
-	g++ -o prog obj/main.o obj/graph.o obj/edge.o obj/vertex.o
+prog: obj/main.o obj/main.o obj/graph.o obj/lista.o obj/graphsearch.o obj/stoper.o
+	g++ -o prog obj/main.o obj/graph.o obj/lista.o obj/graphsearch.o obj/stoper.o
 
-obj/main.o: src/main.cpp inc/graph.hh inc/edge.hh inc/vertex.hh
+obj/main.o: src/main.cpp inc/lista.hh inc/graphsearch.hh
 	g++ ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/stoper.o: src/stoper.cpp inc/stoper.hh
 	g++ ${CPPFLAGS} -o obj/stoper.o src/stoper.cpp
 
-obj/graph.o: src/graph.cpp inc/graph.hh inc/igraph.hh inc/graphsearch.hh
+obj/graphsearch.o: src/graphsearch.cpp inc/graphsearch.hh inc/graph.hh inc/lista.hh
+	g++ ${CPPFLAGS} -o obj/graphsearch.o src/graphsearch.cpp
+
+obj/graph.o: src/graph.cpp inc/graph.hh inc/igraph.hh inc/lista.hh
 	g++ ${CPPFLAGS} -o obj/graph.o src/graph.cpp
 
-obj/edge.o: src/edge.cpp inc/edge.hh
-	g++ ${CPPFLAGS} -o obj/edge.o src/edge.cpp
-
-obj/vertex.o: src/vertex.cpp inc/vertex.hh
-	g++ ${CPPFLAGS} -o obj/vertex.o src/vertex.cpp
+obj/lista.o: src/lista.cpp inc/lista.hh inc/node.hh
+	g++ ${CPPFLAGS} -o obj/lista.o src/lista.cpp
 
 clean:
 	rm -f obj/*.o prog

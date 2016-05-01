@@ -1,18 +1,19 @@
 #ifndef GRAPH_HH
 #define GRAPH_HH
 
-#include "vertex.hh"
-#include "edge.hh"
 #include "igraph.hh"
-
+#include "lista.hh"
 
 class graph : public igraph
 {
-
+  List A[1000000];//macierz sasiedztwa
+  int size;
 public:
-  virtual void addVertex(vertex);
-  virtual void addEdge(vertex,vertex,int);
-  virtual void getNeighbors(vertex);
-  virtual void isConnected(vertex,vertex);
+  graph(){size=0;}
+  void addVertex(int);
+  void addEdge(int,int);
+  List getNeighbors(int);
+  bool isConnected(int,int);
+  int getsize();
 };
 #endif

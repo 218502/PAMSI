@@ -13,11 +13,11 @@ public:
 
 class List : public InterfaceList
 {
+public:
   int Size;
   node* head;
   node* temp;
   node* temp2;
-public:
   List();
   int add(int element, int position);
   void remove(int position);
