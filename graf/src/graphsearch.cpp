@@ -54,5 +54,46 @@ void graphSearch::findPathDFS(int x, int y)
 
 void graphSearch::findPathBFS(int x, int y)
 {
-  ;
+  bool found;
+  int v,u;
+  int* P=new int[1000000];
+  for(int i=0;i<1000000;i++)
+    visited[i]=0;
+
+  P[x]=-1;
+  S.add(x,1);
+  visited[x]=true;
+  found=false;
+
+  while(S.size())
+    {
+      v=S.get(S.size());
+      S.remove(S.size());
+      if(v==y)
+	{
+	  found=true;
+	  break;
+	}
+      //sprawdzamy sasiedztwo v
+      List p=sgraph.getNeighbors(v);
+      for(int i=1;i<p.size()+1;i++)
+	{
+	  u=p.get(i);
+	  if(!visited[u])
+	    {
+	      P[u]=v;
+	      S.add(u,1);
+	      visited[u]=true;
+	    }
+	}
+    }
+  if(!found)
+    std::cout<<"BRAK"<<std::endl;
+  else
+    while(v>-1)
+      {
+	std::cout<<"wierzcholek :"<<v<<std::endl;
+	v=P[v];
+      }
+  delete[] P;
 }
