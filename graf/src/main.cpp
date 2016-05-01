@@ -17,6 +17,6 @@ int main()
   // graf->findPathDFS(1,5);
   graf->addEdge(0,2);
   graf->addEdge(0,5);
-  graf->BFS(6);
+  graf->BFS(0);
 
 }
