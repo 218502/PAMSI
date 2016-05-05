@@ -35,7 +35,7 @@ void graph::addEdge(int x, int y)
 
 List graph::getNeighbors(int x)
 {
-  if(x<size)
+  if(x<size+1)
   return A[x];
   else
     std::cout<<"taki wierzcholek nie istnieje(getNeighbors)"<<std::endl;

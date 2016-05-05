@@ -7,7 +7,7 @@
 class graphSearch
 {
   graph sgraph;
-  bool visited[1000000];
+  bool visited[1000001];
   List S;
   int vk;
 public:

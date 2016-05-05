@@ -7,14 +7,32 @@ using namespace std;
 
 int main()
 {
+  int X=100;
+  Stoper pomiar;
   graphSearch *graf=new graphSearch;
-  for(int i=0;i<7;i++)
+
+  cout<<"Ustawianie wierzcholkow"<<endl;
+  for(int i=0;i<X;i++)
     graf->addVertex(i);
-  for(int i=0;i<6;i++)
+
+  cout<<"Ustawianie krawedzi"<<endl;
+  for(int i=0;i<X;i++)
     graf->addEdge(i,i+1);
-  graf->addEdge(6,0);
-  graf->addEdge(1,6);
-  //graf->addEdge(1,4);
-  graf->findPathBFS(1,3);
+  graf->addEdge(0,X-1);
+  cout<<"Dodawanie losowych krawedzi stanowiacych 10% liczby wierzcholkow"<<endl;
+  for(int i=0;i<(X/10);i++)
+    graf->addEdge(rand()%X,rand()%X);
+
+  pomiar.start();
+  graf->findPathBFS(0,rand()%X);
+  pomiar.stop();
+  cout<<"BFS :";
+  pomiar.pokazCzas();
+
+  pomiar.start();
+  graf->findPathDFS(0,rand()%X);
+  pomiar.stop();
+  cout<<"DFS :";
+  pomiar.pokazCzas();
 
 }

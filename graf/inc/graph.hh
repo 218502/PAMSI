@@ -6,7 +6,7 @@
 
 class graph : public igraph
 {
-  List A[1000000];//macierz sasiedztwa
+  List A[1000001];//macierz sasiedztwa
   int size;
 public:
   graph(){size=0;}

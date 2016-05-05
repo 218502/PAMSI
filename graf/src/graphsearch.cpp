@@ -26,7 +26,7 @@ void graphSearch::BFS(int x)
       x=S.get(S.size());
       S.remove(S.size());
       
-      std::cout<<"wierzcholek :"<<x<<std::endl;
+      //std::cout<<"wierzcholek :"<<x<<std::endl;
       List p=getNeighbors(x);
       for(int i=1;i<p.size()+1;i++)
 	if(!visited[p.get(i)])
@@ -39,7 +39,7 @@ void graphSearch::BFS(int x)
 void graphSearch::findPathDFS(int x, int y)
 {
   vk=y;
-  for(int i=0;i<1000000;i++)
+  for(int i=0;i<1000001;i++)
     visited[i]=0;
 
   if(!DFS(x))
@@ -47,7 +47,7 @@ void graphSearch::findPathDFS(int x, int y)
   else
     while(S.size())
       {
-	std::cout<<S.get(1)<<std::endl;
+	//std::cout<<S.get(1)<<std::endl;
 	S.remove(1);
       }
 }
@@ -56,8 +56,8 @@ void graphSearch::findPathBFS(int x, int y)
 {
   bool found;
   int v,u;
-  int* P=new int[1000000];
-  for(int i=0;i<1000000;i++)
+  int* P=new int[1000001];
+  for(int i=0;i<1000001;i++)
     visited[i]=0;
 
   P[x]=-1;
@@ -92,7 +92,7 @@ void graphSearch::findPathBFS(int x, int y)
   else
     while(v>-1)
       {
-	std::cout<<"wierzcholek :"<<v<<std::endl;
+	//std::cout<<"wierzcholek :"<<v<<std::endl;
 	v=P[v];
       }
   delete[] P;
