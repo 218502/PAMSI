@@ -1,0 +1,14 @@
+#ifndef GRAPH_HH
+#define GRAPH_HH
+
+#include "vertex.hh"
+#include "edge.hh"
+#include "igraph.hh"
+
+
+class graph : public igraph
+{
+  virtual void addVertex(vertex);
+
+};
+#endif
