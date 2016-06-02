@@ -1,0 +1,65 @@
+#include "tab1d.hh"
+#include <iostream>
+using namespace std;
+
+void TabDyn::rozmiartab()
+  {
+    cout<<"Rozmiar:"<<rozmiar<<endl;
+  }
+
+  void TabDyn::maketab()
+  {
+    rozmiar=5;
+    wsk=new int[rozmiar];
+  }
+
+  void TabDyn::deltab()
+  {
+    delete[] wsk;
+  }
+
+  void TabDyn::powieksz()
+  {
+    wsk2=wsk;
+    rozmiar=rozmiar*3;
+    wsk=new int[rozmiar];
+    for(int i=0;i<(rozmiar/3);i++)
+      wsk[i]=wsk2[i];
+    delete[] wsk2;
+  }
+
+  void TabDyn::powieksz2()
+  {
+    wsk2=wsk;
+    rozmiar=rozmiar+1;
+    wsk=new int[rozmiar];
+    for(int i=0;i<(rozmiar/2);i++)
+      wsk[i]=wsk2[i];
+    delete[] wsk2;
+  }
+
+  void TabDyn::wypisztab()
+  {
+  for(int i=0;i<rozmiar;i++)
+    {
+      cout<<wsk[i]<<endl;
+    }
+  }
+
+
+  void TabDyn::wypelnij()// wypelnia tablice numerem indeksu+1 iloscia elementow s
+  {
+    int s=10;
+    for(int i=0;i<s;i++)
+      {
+	if(rozmiar>i)
+	  {
+	wsk[i]=i+1;
+	  }
+	else
+	  {
+	    powieksz();
+	    wsk[i]=i+1;
+	  }
+      }
+  }
