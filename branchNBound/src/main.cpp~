@@ -1,0 +1,58 @@
+#include "IRunnable.hh"
+#include <iostream>
+#include "stoper.hh"
+#include "GraphSearch.hh"
+
+using namespace std;
+
+
+int main()
+{
+  int powt,elem;
+  powt=10;
+  elem=2;
+  int rozmiary[2]= {10, 100};
+  Stoper czas;
+  IRunnable* test= new GraphSearch();
+  double srednia;
+  for (int j = 0; j< elem; ++j)
+   {
+    for(int i = 0; i < powt; ++i)
+      {
+       test->prepare(rozmiary[j]);
+       czas.start();
+       if(test->run())
+	 {
+          czas.stop();
+          czas.pokazCzas();
+	 }
+       else
+        cout << "NOK"<<endl;
+       }
+    cout <<"*****END*****"<< endl;
+   }
+
+
+GraphSearch graf;
+graf.addEdge(0,1,3);
+graf.addEdge(0,2,3);
+graf.addEdge(1,2,5);
+graf.addEdge(1,3,2);
+graf.addEdge(2,4,2);
+graf.addEdge(4,5,2);
+graf.addEdge(3,5,3);
+graf.addEdge(3,7,4);
+graf.addEdge(5,7,1);
+graf.addEdge(2,6,4);
+graf.addEdge(6,8,5);
+graf.addEdge(8,7,7);
+graf.wypiszMacierz();
+for (int i=0; i< 9; ++i)
+{
+for (int j=0; j<9; ++j)
+{
+cout<< "Droga "<<i<<" , "<<j<<": " << graf.BB(i,j)<< endl;
+cout << "Skrót "<<i<<" , "<<j<<": " << graf.branchAndBoundWithExtendedList(i,j)<<endl;
+}
+}
+}
