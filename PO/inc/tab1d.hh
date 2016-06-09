@@ -1,7 +1,8 @@
 #ifndef TAB1D_HH
 #define TAB1D_HH
-
-class TabDyn{
+#include "itab1d.hh"
+class TabDyn :public iTabDyn
+{
   int rozmiar;
   int* wsk;//wskaznik na nasza tablice
   int* wsk2;//wskaznik pomocniczy do kopiowiania/powiekszania

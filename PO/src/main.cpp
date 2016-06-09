@@ -7,15 +7,14 @@ using namespace std;
 
 
 int main(){
-  clock_t start;
-  Stoper czas;
-  TabDyn tab;
+  iStoper *czas=new Stoper;
+  iTabDyn *tab=new TabDyn;
 
-  tab.maketab();
-  czas.start();
-  tab.wypelnij();
-  czas.stop();
-  tab.rozmiartab();
-  czas.pokazCzas();
+  tab->maketab();
+  czas->start();
+  tab->wypelnij();
+  czas->stop();
+  tab->rozmiartab();
+  czas->pokazCzas();
 
 }

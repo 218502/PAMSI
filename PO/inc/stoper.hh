@@ -2,7 +2,10 @@
 #define stoper_hh
 #include <ctime>
 #include <iostream>
-class Stoper{
+#include "istoper.hh"
+
+class Stoper :public iStoper
+{
   clock_t trwanie;
   double czas;
 public:
