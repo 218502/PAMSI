@@ -23,9 +23,9 @@ int stanStartowy[8][8]=
 void warcaby::wypiszPlansze()
 {
   string default_console = "\033[0m";
-  string colorB = "\033[1;36m";
-  string colorW = "\033[1;97m";
-  cout<<"   0   1   2   3   4   5   6   7 "<<endl<<" |--------------------------------|"<<endl;
+  string colorB = "\033[1;44m";
+  string colorW = "\033[1;40m";
+  cout<<"   0   1   2   3   4   5   6   7 "<<endl<<" |-------------------------------|"<<endl;
   for(int i=0;i<8;i++)
     {
       cout<<i;
@@ -56,9 +56,9 @@ void warcaby::wypiszPlansze()
 
 	      }
 	}
-      cout<<" |"<<i;
+      cout<<"|"<<i;
       cout<<endl;;
-      cout<<" |--------------------------------|"<<endl;
+      cout<<" |-------------------------------|"<<endl;
     }
   cout<<"   0   1   2   3   4   5   6   7 "<<endl;
 }
